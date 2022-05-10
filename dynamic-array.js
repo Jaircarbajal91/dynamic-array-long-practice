@@ -4,7 +4,7 @@ class DynamicArray {
     this.capacity = defaultSize;
     this.length = 0;
     this.data = new Array(defaultSize);
-    // Your code here
+
   }
 
   read(index) {
@@ -33,8 +33,8 @@ class DynamicArray {
   }
 
   shift() {
+    
 
-    // Your code here
   }
 
   unshift(val) {
@@ -56,6 +56,3 @@ class DynamicArray {
 
 
 module.exports = DynamicArray;
-
-
-
