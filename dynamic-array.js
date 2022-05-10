@@ -33,8 +33,16 @@ class DynamicArray {
   }
 
   shift() {
-    
+    let shifted = this.data[0]
 
+    for (let i = 0; i < this.length - 1; i++) {
+      this.data[i] = this.data[i + 1];
+    }
+
+    this.data[this.length - 1] = undefined;
+    this.length -= 1;
+
+    return shifted;
   }
 
   unshift(val) {
