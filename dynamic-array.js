@@ -15,14 +15,21 @@ class DynamicArray {
   }
 
   push(val) {
-
-    // Your code here
+    this.data[this.length] = val
+    this.length += 1
+    return this.length
   }
 
 
   pop() {
-
-    // Your code here
+    if (this.length - 1 >= 0){
+        let popped = this.data[this.length - 1]
+        this.data[this.length - 1] = undefined;
+        this.length -= 1;
+        return popped
+    } else {
+      return undefined
+    }
   }
 
   shift() {
@@ -49,3 +56,6 @@ class DynamicArray {
 
 
 module.exports = DynamicArray;
+
+
+
