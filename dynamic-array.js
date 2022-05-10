@@ -17,6 +17,9 @@ class DynamicArray {
   push(val) {
     this.data[this.length] = val
     this.length += 1
+    if (this.length > this.capacity){
+      this.resize ()
+    }
     return this.length
   }
 
@@ -51,20 +54,26 @@ class DynamicArray {
     }
     this.data[0] = val;
     this.length += 1;
+    if (this.length > this.capacity){
+      this.resize ()
+    }
     return this.length;
   }
 
   indexOf (val) {
-
-    // Your code here
+    for (let i = 0; i < this.length; i++) {
+      const element = this.data[i];
+      if (element === val){
+        return i;
+      }
+    }
+    return -1
   }
 
   resize () {
-
-    // Your code here
+    this.capacity *= 2;
   }
 
 }
-
 
 module.exports = DynamicArray;
